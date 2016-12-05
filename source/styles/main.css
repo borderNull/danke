@@ -1,0 +1,302 @@
+@font-face {
+    src: url('../fonts/GothaProReg.otf');
+    font-family: 'Gotham Pro';
+}
+
+@font-face {
+    src: url('../fonts/GothaProMed.otf');
+    font-family: 'Gotham Pro Medium';
+}
+
+@font-face {
+    src: url('../fonts/GothaProBol.otf');
+    font-family: 'Gotham Pro Bold';
+}
+
+@font-face {
+    src: url('../fonts/GothaProNarBol.otf');
+    font-family: 'Gotham Pro Narrow Bold';
+}
+
+@font-face {
+    src: url('../fonts/Proxima Nova Regular.otf');
+    font-family: 'Proxima Nova';
+}
+
+@font-face {
+    src: url('../fonts/Proxima Nova Extrabold.otf');
+    font-family: 'Proxima Nova Extrabold';
+}
+
+.page__wrap {
+    width: 100%;
+    height: 100vh;
+    background-color: #ebebeb;
+}
+
+.header__section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1400px;
+    height: 86px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.header__logo {
+    width: 71px;
+    height: 32px;
+    background: url('../images/logo.png') no-repeat;
+}
+
+.menu__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 46%;
+}
+
+.menu__item {
+    margin: 0;
+    text-transform: uppercase;
+    font: 11px 'Gotham Pro Medium', sans-serif, Arial;
+}
+
+.header__search {
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search__select {
+    height: 30px;
+    width: 80%;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #262626;
+    font: 11px/30px 'Gotham Pro Bold', sans-serif, Arial;
+    background: url('../images/list.png') 90% center no-repeat #efefef;
+}
+
+.header__signup {
+    height: 30px;
+    width: 95px;
+    border: 2px solid #49b689;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font: 11px/1 'Gotham Pro Bold', sans-serif, Arial;
+    background: url('../images/play.png') 85% center no-repeat #fff;
+}
+
+.header__login {
+    width: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product__section {
+    max-width: 1280px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #ebebeb;
+}
+
+.product__card,
+.card__frontside,
+.card__backside {
+    width: 263px;
+    min-height: 320px;
+    max-height: 400px;
+    background-color: #fff;
+}
+
+.product__card {
+    perspective: 1000px;
+    background-color: transparent;
+    margin: 0 18px 18px 0;
+    &:hover .card__flipper {
+        transform: rotateY(180deg);
+    }
+}
+
+.card__flipper {
+    transition: .9s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card__frontside,
+.card__backside {
+    backface-visibility: hidden;
+    position: absolute 0 * * 0;
+}
+
+.card__frontside {
+    z-index: 2;
+    transform: rotateY(0deg);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card__backside {
+    transform: rotateY(180deg);
+}
+
+.product__img {
+    align-self: center;
+    padding: 35px 55px;
+}
+
+.product__brand {
+    width: 91.9%;
+    margin: 0 0 9px;
+    padding: * * * 22px;
+    border-bottom: 1px solid #acacac;
+    text-align: left;
+    color: #acacac;
+    font: 9px/.1px 'Gotham Pro', sans-serif, Arial;
+    &.__backside {
+        width: 100%;
+        padding: 38px 0 7px;
+        margin: 0;
+        border: none;
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 1em;
+        color: #8f8f8f;
+    }
+    & .brand__span {
+        background: #fff;
+        padding: 0 8px;
+        text-transform: uppercase;
+    }
+}
+
+.product__name {
+    margin: 0 * 7px 29px;
+    text-transform: uppercase;
+    color: #191919;
+    font: 14px/1 'Gotham Pro Bold', sans-serif, Arial;
+    &.__backside {
+        font-size: 16px;
+        padding: 0 0 10px;
+        margin: 0;
+    }
+}
+
+.product__details {
+    margin: 0 * 4px 29px;
+    text-transform: uppercase;
+    color: #5e5e5e;
+    font: 12px/1 'Gotham Pro', sans-serif, Arial;
+}
+
+.product__price {
+    align-self: flex-end;
+    padding: 0 22px 17px *;
+    margin: 0;
+    font: 18px/1 'Gotham Pro Narrow Bold', sans-serif, Arial;
+    &.__backside {
+        padding: 0;
+    }
+}
+
+.card__backside {
+    display: flex;
+    flex-flow: column nowrap;
+    box-shadow: 0 0 27px rgba(0, 0, 0, .2);
+}
+
+.backside__content {
+    padding: * 21px * 33px;
+}
+
+.product__text {
+    width: 192px;
+    padding: 0 0 17px;
+    margin: 0;
+    font: 14px/20px 'Proxima Nova', sans-serif, Arial;
+}
+
+.product__availability {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 21px;
+    margin: 0;
+}
+
+.availability__text {
+    margin: 0;
+    color: #49b689;
+    font: 14px/1 'Gotham Pro Bold', sans-serif, Arial;
+}
+
+.product__cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 20px;
+}
+
+.product__more {
+    width: 127px;
+    padding: 14px 0 12px;
+    border-radius: 35px;
+    background-color: #49b689;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font: 11px/1 'Proxima Nova Extrabold', sans-serif, Arial;
+}
+
+.product__add {
+    height: 34px;
+    width: 67px;
+    border: 2px solid #49b689;
+    border-radius: 25px;
+    background: url('../images/add.png') center no-repeat;
+}
+
+@media (min-width:320px) and (max-width:540px) {
+    .header__section {
+        padding: 10px 0 0;
+        background: url('../images/mobileTop.png') top no-repeat, #fff;
+    }
+    .product__card {
+        margin: 0 0 18px;
+    }
+}
+
+@media (min-width:320px) and (max-width:1200px) {
+    .header__logo {
+        size: 33px;
+        background: url('../images/mobileLogo.png') no-repeat;
+    }
+    .menu__block {
+        width: 20%;
+        height: 50px;
+        background: url('../images/menuList.png') center no-repeat;
+    }
+    .menu__item {
+        display: none;
+    }
+    .header__search {
+        display: none;
+    }
+    .header__login {
+        width: 30%;
+        height: 50px;
+        background: url('../images/cart.png') left center no-repeat, url('../images/number.png') 20% top no-repeat, url('../images/phone.png') right center no-repeat;
+    }
+    .header__signup {
+        display: none;
+    }
+}

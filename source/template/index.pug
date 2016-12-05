@@ -1,0 +1,58 @@
+block variables 
+
+-var menu = ['солод','хмель','брожение','специи','фильтр & мойка']
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Danke Page
+    meta(content="" name="author")
+    meta(content="" name="description")
+    meta(content="" name="keywords")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    link(rel='stylesheet' href='/assets/css/normalize.css')
+    link(rel='stylesheet' href='/assets/css/main.css')
+    script(src='/assets/js/main.js' defer)
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    <![endif]-->
+  body
+   section.page__wrap
+    header.header__section
+     .header__logo
+     .menu__block
+       each item in menu
+        p.menu__item=item
+     .header__search
+       img.search__img(src='./assets/images/Search.png')
+       .search__select Санкт-Петербург
+     .header__login  
+      button.header__signup войти
+      img.header__cart(src='./assets/images/cart.png')   
+    section.product__section
+     -for(i = 0; i < 7; i++)    
+      .product__card(id=i)
+       .card__flipper  
+         .card__frontside
+           img.product__img(src='./assets/images/solod.png')  
+           p.product__brand
+            span.brand__span karl fridrich
+           p.product__name светлый солод
+           p.product__details 15-25 ebc
+           p.product__price 90
+            img.price__img(src='./assets/images/ruble.png') 
+         .card__backside
+          .backside__content   
+           p.product__brand.__backside karl fridrich
+           p.product__name.__backside светлый солод
+           p.product__text Уникальный специальный Бельгийский солод. Слегка обсушен и обжарен при температуре до 160°C. Слегка обсушен и обжарен при температуре до 160°C.
+           .product__availability
+              p.availability__text В наличии
+              p.product__price.__backside 99
+               img.price__img(src='./assets/images/ruble.png')
+           .product__cart
+             .product__more подробнее
+             .product__add       
+
