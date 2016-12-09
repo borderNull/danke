@@ -28,43 +28,59 @@
     font-family: 'Proxima Nova Extrabold';
 }
 
-.page__wrap {
+.page-wrap {
     width: 100%;
     height: 100vh;
     background-color: #ebebeb;
 }
 
-.header__section {
+.header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1280px;
     height: 86px;
     background-color: #fff;
     margin: 0 auto;
 }
 
 .header__logo {
+    margin: 0 0 0 54px;
     width: 71px;
     height: 32px;
     background: url('../images/logo.png') no-repeat;
 }
 
-.menu__block {
+.menu {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 46%;
+    justify-content: space-between;
+    width: 41%;
 }
 
 .menu__item {
     margin: 0;
     text-transform: uppercase;
     font: 11px 'Gotham Pro Medium', sans-serif, Arial;
+    transition: all .5s;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid rgba(73, 182, 137, 0);
+    &:hover {
+        cursor: pointer;
+        border: 2px solid rgba(73, 182, 137, 1);
+    }
 }
 
-.header__search {
-    width: 16%;
+.header-auth {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: 0 65px 0 0;
+}
+
+.search {
+    width: 58%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,34 +88,37 @@
 
 .search__select {
     height: 30px;
-    width: 80%;
+    width: 70%;
+    padding: 0 0 0 17px;
     border: none;
     border-radius: 20px;
-    text-align: center;
     text-transform: uppercase;
     color: #262626;
+    letter-spacing: .7px;
     font: 11px/30px 'Gotham Pro Bold', sans-serif, Arial;
     background: url('../images/list.png') 90% center no-repeat #efefef;
 }
 
-.header__signup {
+.login {
+    width: 38.5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.login__signup {
     height: 30px;
-    width: 95px;
+    width: 94px;
+    margin: 0 28px 0 0;
     border: 2px solid #49b689;
     border-radius: 15px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     font: 11px/1 'Gotham Pro Bold', sans-serif, Arial;
     background: url('../images/play.png') 85% center no-repeat #fff;
 }
 
-.header__login {
-    width: 11%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.product__section {
+.product {
     max-width: 1280px;
     margin: 100px auto 0;
     display: flex;
@@ -176,6 +195,7 @@
         background: #fff;
         padding: 0 8px;
         text-transform: uppercase;
+        letter-spacing: 2px;
     }
 }
 
@@ -254,7 +274,16 @@
     text-transform: uppercase;
     text-align: center;
     color: #fff;
+    border: 1px solid #49b689;
+    letter-spacing: 1px;
     font: 11px/1 'Proxima Nova Extrabold', sans-serif, Arial;
+    transition: all .5s;
+    cursor: pointer;
+    &:hover {
+        color: #49b689;
+        background-color: #fff;
+        border: 1px solid #49b689;
+    }
 }
 
 .product__add {
@@ -265,22 +294,16 @@
     background: url('../images/add.png') center no-repeat;
 }
 
-@media (min-width:320px) and (max-width:540px) {
-    .header__section {
-        padding: 10px 0 0;
-        background: url('../images/mobileTop.png') top no-repeat, #fff;
+@media (min-width:320px) and (max-width:1199px) {
+    .header {
+        justify-content: center;
     }
-    .product__card {
-        margin: 0 0 18px;
-    }
-}
-
-@media (min-width:320px) and (max-width:1200px) {
     .header__logo {
         size: 33px;
         background: url('../images/mobileLogo.png') no-repeat;
+        margin: 0;
     }
-    .menu__block {
+    .menu {
         width: 20%;
         height: 50px;
         background: url('../images/menuList.png') center no-repeat;
@@ -288,15 +311,32 @@
     .menu__item {
         display: none;
     }
-    .header__search {
+    .header-auth {
+        margin: 0;
+    }
+    .search {
         display: none;
     }
-    .header__login {
-        width: 30%;
+    .login {
+        width: 48%;
         height: 50px;
         background: url('../images/cart.png') left center no-repeat, url('../images/number.png') 20% top no-repeat, url('../images/phone.png') right center no-repeat;
     }
-    .header__signup {
+    .login__signup {
         display: none;
+    }
+}
+
+@media (min-width:320px) and (max-width:540px) {
+    .header {
+        padding: 10px 0 0;
+        justify-content: space-around;
+        background: url('../images/mobileTop.png') top no-repeat, #fff;
+    }
+    .login {
+        width: 93%;
+    }
+    .product__card {
+        margin: 0 0 18px;
     }
 }

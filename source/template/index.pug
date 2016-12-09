@@ -19,19 +19,20 @@ html
     script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
     <![endif]-->
   body
-   section.page__wrap
-    header.header__section
+   section.page-wrap
+    header.header
      .header__logo
-     .menu__block
+     .menu
        each item in menu
         p.menu__item=item
-     .header__search
-       img.search__img(src='./assets/images/Search.png')
-       .search__select Санкт-Петербург
-     .header__login  
-      button.header__signup войти
-      img.header__cart(src='./assets/images/cart.png')   
-    section.product__section
+     .header-auth
+       .search
+         img.search__img(src='./assets/images/Search.png')
+         .search__select Санкт-Петербург
+       .login  
+        button.login__signup войти
+        img.login__img(src='./assets/images/cart.png')   
+    section.product
      -for(i = 0; i < 7; i++)    
       .product__card(id=i)
        .card__flipper  
